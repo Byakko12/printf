@@ -5,27 +5,17 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-
-
 typedef struct functions
 {
 	char *form_char;
-	int (*f)(const char *);
+	char *(*f)(va_list, char *, int);
 } functions_t;
 
-int f_char(const char *c);
-int f_str(const char *c);
+char *f_char(va_list data_input, char *output, int);
 int _printf(const char *format, ...);
-
-
-
-
-
-
-
-
-
-
+char *f_strcpy(const char *str, char *output, int index);
+int index_func(const char *input_string);
+int _putchar(char c);
 
 
 #endif /*MAIN_HEADER*/
