@@ -11,7 +11,7 @@
 int main()
 {    
     
-    char test = 'h';
-    _printf("Hola mundo %c String 2 %c\n", test, 'a');
+    char *test = "abc";
+    _printf("Hola mundo %s String 2 %s\n", test, "asdasdas");
     return(0);
 }
