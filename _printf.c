@@ -32,6 +32,10 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			r = match(format + i + 1);
+			if (format[i + 1] == '\0')
+			{
+				return (-1);
+			}
 			if (r == NULL)
 			{
 				i++;
@@ -63,9 +67,9 @@ void *(*match(const char *format))(va_list data, char **buffer)
 
 	/*Function structure declaration*/
 	functions_t func_call[] = {
-	    {"c", f_char},
-	    {"s", f_str},
-	    {NULL, NULL}};
+		{"c", f_char},
+		{"s", f_str},
+		{NULL, NULL}};
 	while (func_call[i].form_char != NULL)
 	{
 		if (*format == *(func_call[i].form_char))

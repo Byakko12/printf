@@ -54,7 +54,11 @@ void *f_str(va_list data_input, char **output)
 	char *s;
 
 	s = va_arg(data_input, char *);
-
+	if (s == NULL)
+	{
+		s = "(null)";
+	}
+	
 	while (*s)
 	{
 		**output = *s;

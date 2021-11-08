@@ -9,10 +9,9 @@
  */
 
 int main()
-{    
-    
-    
-    _printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
-    _printf("Let's print a simple sentence.\n");
-    return(0);
+{
+    printf("%!\n");
+    _printf("%!\n");
+
+    return (0);
 }
