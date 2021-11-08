@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	/*Function structure declaration*/
 	functions_t func_call[] = {
 	    {"c", f_char},
-	    /*{"s", f_str},*/
+	    {"s", f_str},
 	    {NULL, NULL}};
 
 	/*List starts*/
@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 	}
 	i = index_func(format);
 	
-	print_output = malloc(sizeof(char) * i + 1);
+	print_output = malloc(sizeof(char) * _strlen(format) + 1);
 	if (print_output == NULL)
 	{
 		exit(0);
@@ -46,14 +46,23 @@ int _printf(const char *format, ...)
 			{
 
 				func_call[j].f(data_input, print_output, i);
+				print_output = f_strcomp(format, print_output, i);
 			}
 		}
 	}
-	va_end(data_input);
-	for (k = 0; print_output[k]; k++)
+
+
+
+
+
+	
+	for (k = 0; print_output[k]; k++, i++)
 	{
 		_putchar(print_output[k]);
+		
 	}
+	va_end(data_input);
+	
 	free(print_output);
 	return (0);
 }
