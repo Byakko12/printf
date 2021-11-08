@@ -7,13 +7,6 @@ int _strlen(const char *s)
 		;
 	return (i);
 }
-int _strlen2(char *s)
-{
-	int i = 0;
-	for (; *s; i++, s++)
-		;
-	return (i);
-}
 
 int index_func(const char *input_string)
 {
@@ -28,10 +21,14 @@ int index_func(const char *input_string)
 	return (i);
 }
 
-char *f_char(va_list data_input, char *output, int index)
+void *f_char(va_list data_input, char **output)
 {
-	output[index] = va_arg(data_input, int);
-	return (output);
+	char c;
+
+	c = va_arg(data_input, int);
+	printf("%c\n", c);
+	**output = c;
+	(*output)++;
 }
 
 char *f_strcpy(const char *str, char *output, int index)
@@ -49,8 +46,6 @@ char *f_strcpy(const char *str, char *output, int index)
 }
 char *f_strcomp(const char *str, char *output, int index)
 {
-
-
 	char temp;
 
 	for (; str[index]; index++)
@@ -61,25 +56,23 @@ char *f_strcomp(const char *str, char *output, int index)
 
 	return (output);
 }
-int _putchar(char c)
+int _putchar(char *buff, int sizebuff)
 {
-	return(write(1, &c, 1));
+	return (write(1, buff, sizebuff));
 }
-
-char *f_str(va_list data_input, char *output, int index)
+/*
+char *f_str(va_list data_input, char *output)
 {
 	unsigned int i = 0, j = 0;
-	char *temp = va_arg(data_input, char*);
+	char *temp = va_arg(data_input, char *);
 
 	j = _strlen(temp) + index;
 
 	_realloc(output, index, j);
 
-	for (;temp[i]; i++, index++)
+	for (; temp[i]; i++, index++)
 	{
 		output[index] = temp[i];
 	}
-	return(output);
-	
-}
-
+	return (output);
+}*/
