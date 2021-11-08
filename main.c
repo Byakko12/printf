@@ -11,7 +11,8 @@
 int main()
 {    
     
-    char *test = "abc";
-    _printf("Hola mundo %s String 2 %s\n", test, "asdasdas");
+    
+    _printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
+    _printf("Let's print a simple sentence.\n");
     return(0);
 }

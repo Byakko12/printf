@@ -21,5 +21,4 @@ void *f_str(va_list data_input, char **output);
 char *f_strcomp(const char *str, char *output, int index);
 int _strlen(const char *s);
 
-
 #endif /*MAIN_HEADER*/
