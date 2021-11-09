@@ -14,7 +14,7 @@ Upon successful return, these functions return the number of
 characters printed (excluding the null byte used to end output to
 strings).
 .SH OPTIONS
-The nuseradd does not take any options. However, you can supply username.
+.BR %c - %s - %d -%i
 .SH EXAMPLES
 .BR format %c
 .TP
