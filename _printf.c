@@ -1,15 +1,4 @@
 #include "main.h"
-
-/**
- * _printf - Prints any type of data based
- * on format.
- *
- * @format: Format to print (int, double, char, string, ...)
- * Return: int
- */
-#include "main.h"
-#include <stdio.h>
-
 /**
  * _printf - Prints any type of data based
  * on format.
@@ -31,6 +20,10 @@ int _printf(const char *format, ...)
 	va_start(data_input, format);
 	if (format == NULL)
 		return (-1);
+	if (va_arg(data_input, int) == '\0')
+	{
+		return (1);
+	}
 	for (; format && format[i]; i++)
 	{
 		*buffer = format[i];
@@ -38,7 +31,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
-			{	
+			{
 				free(print_output);
 				return (-1);
 			}

@@ -13,6 +13,7 @@ void *f_char(va_list data_input, char **output)
 	char c;
 
 	c = va_arg(data_input, int);
+	
 	**output = c;
 	(*output)++;
 	return (0);

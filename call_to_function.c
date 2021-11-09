@@ -22,9 +22,9 @@ void *(*match(const char *format))(va_list data, char **buffer)
 	{
 		if (*format == *(func_call[i].form_char))
 		{
-			break;
+			return (func_call[i].f);
 		}
 		i++;
 	}
-	return (func_call[i].f);
+	return (NULL);
 }
