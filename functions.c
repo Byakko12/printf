@@ -58,7 +58,7 @@ void *f_str(va_list data_input, char **output)
 	{
 		s = "(null)";
 	}
-	
+
 	while (*s)
 	{
 		**output = *s;

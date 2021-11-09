@@ -11,34 +11,30 @@
 
 int _printf(const char *format, ...)
 {
-	/*List & Vars Inicialization*/
 	va_list data_input;
 	int i = 0, lenght = 0;
 	char print_output[3000];
 	char *buffer = &print_output[0];
 	void *(*r)(va_list, char **buffer);
 
-	/*List starts*/
 	va_start(data_input, format);
 
 	if (format == NULL)
-	{
 		return (-1);
-	}
 	for (; format && format[i]; i++)
 	{
 		*buffer = format[i];
 		buffer++;
 		if (format[i] == '%')
 		{
-			r = match(format + i + 1);
+
 			if (format[i + 1] == '\0')
-			{
 				return (-1);
-			}
+			r = match(format + i + 1);
 			if (r == NULL)
 			{
-				i++;
+				if (format[i + 1] == '%')
+					i++;
 				continue;
 			}
 			else
@@ -67,9 +63,9 @@ void *(*match(const char *format))(va_list data, char **buffer)
 
 	/*Function structure declaration*/
 	functions_t func_call[] = {
-		{"c", f_char},
-		{"s", f_str},
-		{NULL, NULL}};
+	    {"c", f_char},
+	    {"s", f_str},
+	    {NULL, NULL}};
 	while (func_call[i].form_char != NULL)
 	{
 		if (*format == *(func_call[i].form_char))
