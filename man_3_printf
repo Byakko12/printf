@@ -1,0 +1,48 @@
+.\" Manpage for _printf.
+.\" Contact davidlandg@gmail.com to correct errors or typos.
+.TH man 8 "09 Nov 2021" "1.0" "_printf man page"
+.SH NAME
+_printf \- format and print data 
+.SH SYNOPSIS
+_printf FORMAT [ARGUMENT]...
+_printf OPTION
+.SH DESCRIPTION
+Print ARGUMENT according to FORMAT, or print tring without format
+int _printf(const char *restrict format, ...);
+.SH RETURN VALUE
+Upon successful return, these functions return the number of
+characters printed (excluding the null byte used to end output to
+strings).
+.SH OPTIONS
+The nuseradd does not take any options. However, you can supply username.
+.SH EXAMPLES
+.BR format %c
+.TP
+_printf("%c", 'S')
+output:S
+.TP
+.BR format %s
+.TP
+char *str = "Hello world"
+.TP
+_printf("man gcc:\n%s", str); /*where str is a big string*/
+output: man gcc
+        Hello world
+.TP
+.BR format %d
+.TP
+_printf("%d - %d = %d\n", 1024, 2048, -1024)
+output: 1024 - 2048 = -1024
+.TP
+.BR format %i
+.TP
+_printf("%i - %i = %i\n", 1024, 2048, -1024)
+output: 1024 - 2048 = -1024
+.TP
+.SH SEE ALSO
+printf(3) 
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Juan David Latorre (davidlandg@gmail.com) 
+Daniel Ceron (danielceron584@gmail.com)
