@@ -108,6 +108,8 @@ G --> H[Print Input + Variable in Format]
 ## Credits && Docs
 
 Secrets of “printf”  by *Professor Don Colton*
+
 *Based* on the Project **# 0x11. C - printf** on *Holberton School*
+
 Command `man printf` and `printf`  function by *David MacKenzie*
 
