@@ -21,10 +21,9 @@ int _printf(const char *format, ...)
 	if (print_output == NULL)
 		return (-1);
 	buffer = &print_output[0];
-	for (; format && format[i]; i++)
+	for (; format && format[i]; i++, buffer++)
 	{
 		*buffer = format[i];
-		buffer++;
 		if (format[i] == '%')
 		{
 			r = match(format + i + 1);
@@ -32,11 +31,13 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == '%')
 					i++;
+				if (format[i + 1] == '\0')
+					break;
 				continue;
 			}
 			else
 			{
-				buffer--;
+				
 				r(data_input, &buffer);
 				i++;
 			}
