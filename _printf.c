@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 	char *print_output, *buffer;
 	void *(*r)(va_list, char **buffer);
 
-	print_output = _calloc(512, sizeof(char));
+	print_output = _calloc(1024, sizeof(char));
 	if (print_output == NULL)
 		return (-1);
 	buffer = &print_output[0];
@@ -38,7 +38,10 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
+			{	
+				free(print_output);
 				return (-1);
+			}
 			r = match(format + i + 1);
 			if (r == NULL)
 			{
