@@ -20,10 +20,6 @@ int _printf(const char *format, ...)
 	va_start(data_input, format);
 	if (format == NULL)
 		return (-1);
-	if (va_arg(data_input, int) == '\0')
-	{
-		return (1);
-	}
 	for (; format && format[i]; i++)
 	{
 		*buffer = format[i];
