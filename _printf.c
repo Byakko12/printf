@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 	char *print_output, *buffer;
 	void *(*r)(va_list, char **buffer);
 
-	print_output = _calloc(1024, sizeof(char));
+	print_output = _calloc(3000, sizeof(char));
 	if (print_output == NULL)
 		return (-1);
 	buffer = &print_output[0];
