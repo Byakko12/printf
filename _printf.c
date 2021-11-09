@@ -30,23 +30,20 @@ int _printf(const char *format, ...)
 			{
 				free(print_output);
 				return (-1);
-			}
-			r = match(format + i + 1);
+			}			r = match(format + i + 1);
 			if (r == NULL)
 			{
 				if (format[i + 1] == '%')
 					i++;
 				continue;
-			}
-			else
+			}			else
 			{
 				buffer--;
 				r(data_input, &buffer);
 				i++;
 			}
 		}
-	}
-	i = _strlen(print_output);
+	}	i = _strlen(print_output);
 	_putchar(print_output, buffer - (char *)print_output);
 	va_end(data_input);
 	free(print_output);
