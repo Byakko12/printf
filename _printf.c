@@ -44,8 +44,6 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == '%')
 					i++;
-				if (format[i + 1] == '%')
-					i++;
 				continue;
 			}
 			else
