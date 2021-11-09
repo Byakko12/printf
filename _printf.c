@@ -12,7 +12,7 @@
 int _printf(const char *format, ...)
 {
 	va_list data_input;
-	int i = 0, lenght = 0;
+	unsigned int i = 0, lenght = 0;
 	char print_output[3000];
 	char *buffer = &print_output[0];
 	void *(*r)(va_list, char **buffer);
@@ -65,6 +65,8 @@ void *(*match(const char *format))(va_list data, char **buffer)
 	functions_t func_call[] = {
 	    {"c", f_char},
 	    {"s", f_str},
+	    {"d", f_int},
+	    {"i", f_int},
 	    {NULL, NULL}};
 	while (func_call[i].form_char != NULL)
 	{

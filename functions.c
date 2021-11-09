@@ -7,9 +7,9 @@
  */
 int _strlen(const char *s)
 {
-	int i = 0;
+	unsigned int i;
 
-	for (; *s; i++, s++)
+	for (i = 0; s[i] != '\0'; i++)
 		;
 	return (i);
 }
@@ -66,4 +66,50 @@ void *f_str(va_list data_input, char **output)
 		s++;
 	}
 	return (0);
+}
+void *f_int(va_list data_input, char **output)
+{
+	int i = 0;
+
+	i = va_arg(data_input, int);
+
+	f_intcpy(i, output);
+
+	return (0);
+}
+
+void *f_intcpy(int input, char **output)
+{
+	unsigned int last_digit = 0, reversed = 0, digit = 0;
+
+	if (input < 0)
+	{
+		**output = '-';
+		(*output)++;
+		last_digit = ('0' - (input % 10));
+		input /= -10;
+	}
+	else
+	{
+		last_digit = ((input % 10) + '0');
+		input /= 10;
+	}
+	reversed = 0;
+	while (input > 0)
+	{
+		reversed = (reversed * 10 + (input % 10));
+		input /= 10;
+	}
+	while (reversed > 0)
+	{
+		digit = ((reversed % 10) + '0');
+		**output = digit;
+		(*output)++;
+		reversed /= 10;
+	}
+	**output = last_digit;
+	(*output)++;
+
+
+	return(0);
 }
