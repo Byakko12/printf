@@ -1,0 +1,164 @@
+#include "main.h"
+#include <limits.h>
+
+
+int main()
+{
+
+/* char * str = "asldñkjfalñsdfjasñldkjfasñldfkjasdlñkfjasñldfkjasñdlfjasdñlfkjasdñlfkjasdfñlkajsdfñlasjdfñlkasjdfñlasdjfañlskdjfasdlñkfjasñldfkjasñldkfjasñdlkfjasñldfkjasñdflkjasdflñkajsdflñaksjedflñkasjdflñkajsdflñaksjdfñlaksjdflñaskjdflñasdjflasdjkf"; */
+
+
+int l = INT_MAX;
+
+ _printf("Let's print a simple sentence.\n");
+
+
+
+_printf("I'm a number: %d", 10);
+
+
+
+
+
+
+_printf("%d", 1024);
+
+
+_printf("%d", -1024);
+
+
+_printf("%d", 0);
+
+
+_printf("%d", INT_MAX);
+
+
+_printf("%d", INT_MIN);
+
+
+_printf("%d", l); /*where l is a long int equals to INT_MAX + 1024*/
+
+
+
+_printf("%d", l); /*where l is a long int equals to INT_MIN - 1024*/
+
+
+_printf("There is %d bytes in %d KB\n", 1024, 1);
+
+
+_printf("%d - %d = %d\n", 1024, 2048, -1024);
+
+
+_printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+
+
+_printf("%i", 1024);
+
+
+_printf("%i", -1024);
+
+
+_printf("%i", 0);
+
+
+_printf("%i", INT_MAX);
+
+
+_printf("%i", INT_MIN);
+
+
+
+_printf("%i", l); 
+
+
+
+_printf("%i", l); 
+
+
+_printf("There is %i bytes in %i KB\n", 1024, 1);
+
+
+_printf("%i - %i = %i\n", 1024, 2048, -1024);
+
+
+_printf("%i + %i = %i\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+
+
+_printf("%d == %i\n", 1024, 1024);
+
+
+_printf("iddi%diddiiddi\n", 1024);
+
+
+_printf("%d", 10000);
+
+
+_printf("%i", 10000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*_printf("%c", 'S');
+
+
+ _printf("A char inside a sentence: %c. Did it work?\n", 'F');
+
+
+ _printf("Let'see if the cast is correctly done: %c. Did it work?\n", 48);
+
+
+ _printf("%s", "This sentence is retrieved from va_args!\n");
+
+
+ _printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
+
+
+ _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+
+
+ _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
+
+
+ _printf("%%");
+
+
+ _printf("Should print a single percent sign: %%\n");
+
+
+ _printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
+
+
+ _printf("css%ccs%scscscs", 'T', "Test");
+
+
+ _printf(str); where str is a big string*/
+
+
+ /*_printf("man gcc:\n%s", str); where str is a big string;*/
+
+
+ /*_printf(NULL);
+
+
+ _printf("%c", '\0');
+
+
+ _printf("%");
+
+
+ _printf("%!\n");
+
+
+ _printf("%K\n"); */
+
+ return(0);
+}

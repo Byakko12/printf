@@ -8,17 +8,18 @@
  * @format: Format to print (int, double, char, string, ...)
  * Return: int
  */
-
 int _printf(const char *format, ...)
 {
 	va_list data_input;
-	unsigned int i = 0, lenght = 0;
-	char print_output[3000];
-	char *buffer = &print_output[0];
+	unsigned int i = 0;
+	char *print_output, *buffer;
 	void *(*r)(va_list, char **buffer);
 
+	print_output = _calloc(1024, sizeof(char));
+	if (print_output == NULL)
+		return (-1);
+	buffer = &print_output[0];
 	va_start(data_input, format);
-
 	if (format == NULL)
 		return (-1);
 	for (; format && format[i]; i++)
@@ -27,7 +28,6 @@ int _printf(const char *format, ...)
 		buffer++;
 		if (format[i] == '%')
 		{
-
 			if (format[i + 1] == '\0')
 				return (-1);
 			r = match(format + i + 1);
@@ -45,36 +45,9 @@ int _printf(const char *format, ...)
 			}
 		}
 	}
-	lenght = _strlen(print_output);
+	i = _strlen(print_output);
 	_putchar(print_output, buffer - (char *)print_output);
 	va_end(data_input);
-	return (lenght);
-}
-/**
- * match - find and return the
- * match format function
- *
- * @format: entry string to find
- * Return: function to found
- */
-void *(*match(const char *format))(va_list data, char **buffer)
-{
-	int i = 0;
-
-	/*Function structure declaration*/
-	functions_t func_call[] = {
-	    {"c", f_char},
-	    {"s", f_str},
-	    {"d", f_int},
-	    {"i", f_int},
-	    {NULL, NULL}};
-	while (func_call[i].form_char != NULL)
-	{
-		if (*format == *(func_call[i].form_char))
-		{
-			break;
-		}
-		i++;
-	}
-	return (func_call[i].f);
+	free(print_output);
+	return (i);
 }

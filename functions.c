@@ -1,18 +1,5 @@
 #include "main.h"
-/**
- * _strlen - lenght of string
- *
- * @s: entry string
- * Return: int
- */
-int _strlen(const char *s)
-{
-	unsigned int i;
 
-	for (i = 0; s[i] != '\0'; i++)
-		;
-	return (i);
-}
 /**
  * f_char - moves the pointer
  * copying the input char
@@ -30,17 +17,7 @@ void *f_char(va_list data_input, char **output)
 	(*output)++;
 	return (0);
 }
-/**
- * _putchar - prints the characters
- *
- * @buff: Entry pointer to print
- * @sizebuff: Size to print
- * Return: printing on screen
- */
-int _putchar(char *buff, int sizebuff)
-{
-	return (write(1, buff, sizebuff));
-}
+
 /**
  * f_str - moves the pointer
  * copying the input string
@@ -110,6 +87,5 @@ void *f_intcpy(int input, char **output)
 	**output = last_digit;
 	(*output)++;
 
-
-	return(0);
+	return (0);
 }
