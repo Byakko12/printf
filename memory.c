@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * calloc - assign an initialized value on mem
+ * _calloc - assign an initialized value on mem
  *
  * @nmemb: number of bytes
  * @size: size of type of data

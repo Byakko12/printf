@@ -44,6 +44,15 @@ void *f_str(va_list data_input, char **output)
 	}
 	return (0);
 }
+
+/**
+ * f_int - copy the int arg
+ * in to the output
+ *
+ * @data_input: input integer
+ * @output: pointers to output string
+ * Return: void*
+ */
 void *f_int(va_list data_input, char **output)
 {
 	int i = 0;
@@ -54,7 +63,14 @@ void *f_int(va_list data_input, char **output)
 
 	return (0);
 }
-
+/**
+ * f_intcpy - moves the pointer
+ * to allocate the integer
+ *
+ * @input: integer to copy
+ * @output: char dbl pointer to move
+ * Return: void*
+ */
 void *f_intcpy(int input, char **output)
 {
 	unsigned int last_digit = 0, reversed = 0, digit = 0;
