@@ -87,22 +87,7 @@ On screen:
 
 ## Flow Chart
 
-
-
-
-```mermaid
-graph TB
-A(( Entry Point)) --> B[Input String]
-B --> C{Input = %}
-B --> D{Input != %}
-D --> E[Putchar Input]
-E --> F[Increase Input]
-F --> D
-C --> G[Next to % is Format]
-G --> H[Print Input + Variable in Format]
-
-
-```
+![FLow chart of _printf](https://drive.google.com/uc?export=view&id=1KXfgm-NjT8j2byfl2bk2pq0mJ1WlAnQe)
 
 
 ## Credits && Docs
